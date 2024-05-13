@@ -100,13 +100,17 @@ for i in C:
             m += y[i,j,k] <= p[n[i],j]
 
 
+
 # Contabilizar la maxima finalizacion de cirugias
 for i in C:
     m+= z >= lp.lpSum(x[i,j,k]*(j+d[i]-1) for j in F for k in S)
 
 
 
-
+# Un doctor solo puede realizar una cirugía a la vez
+for j in F:
+        for doctor in D:
+            m += lp.lpSum(y[i,j,k] for i in C for k in S if n[i] == doctor) <= 1
 
 
 
