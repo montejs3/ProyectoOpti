@@ -102,8 +102,8 @@ for i in C:
 
 
 # Contabilizar la maxima finalizacion de cirugias
-for i in C:
-    m+= z >= lp.lpSum(x[i,j,k]*(j+d[i]-1) for j in F for k in S)
+
+m+= z >= lp.lpSum(x[i,j,k]*(j+d[i]-1) for j in F for k in S for i in C)
 
 
 
