@@ -1,0 +1,51 @@
+Result - Optimal solution found
+
+Objective value:                97.00000000
+Enumerated nodes:               46
+Total iterations:               5614
+Time (CPU seconds):             14.13
+Time (Wallclock seconds):       14.13
+
+Option for printingOptions changed from normal to all
+Total time (CPU seconds):       14.27   (Wallclock seconds):       14.27
+
+Cirugía ORT12 en franja 7 en sala 5
+Cirugía ORT12 en franja 8 en sala 5
+Cirugía ORT12 en franja 9 en sala 5
+Cirugía GAS23 en franja 1 en sala 3
+Cirugía GAS23 en franja 2 en sala 3
+Cirugía OFT63 en franja 1 en sala 7
+Cirugía OFT63 en franja 2 en sala 7
+Cirugía NEU51 en franja 4 en sala 5
+Cirugía NEU51 en franja 5 en sala 5
+Cirugía ORT76 en franja 3 en sala 1
+Cirugía ORT76 en franja 4 en sala 1
+Cirugía NEU40 en franja 6 en sala 4
+Cirugía NEU40 en franja 7 en sala 4
+Cirugía NEU40 en franja 8 en sala 4
+Cirugía NEU40 en franja 9 en sala 4
+Cirugía NEU40 en franja 10 en sala 4
+Cirugía ORT55 en franja 1 en sala 1
+Cirugía ORT55 en franja 2 en sala 1
+Cirugía ORT53 en franja 5 en sala 1
+Cirugía ORT53 en franja 6 en sala 1
+Cirugía OFT88 en franja 3 en sala 7
+Cirugía OFT88 en franja 4 en sala 7
+Cirugía OFT88 en franja 5 en sala 7
+Cirugía GAS99 en franja 9 en sala 3
+Cirugía GAS99 en franja 10 en sala 3
+Cirugía GAS99 en franja 11 en sala 3
+Cirugía GAS99 en franja 12 en sala 3
+Cirugía CAR17 en franja 1 en sala 6
+Cirugía CAR17 en franja 2 en sala 6
+Cirugía CAR17 en franja 3 en sala 6
+Cirugía CAR17 en franja 4 en sala 6
+Cirugía GAS36 en franja 3 en sala 2
+Cirugía GAS36 en franja 4 en sala 2
+Cirugía ORT43 en franja 10 en sala 2
+Cirugía ORT43 en franja 11 en sala 2
+Cirugía ORT43 en franja 12 en sala 2
+Cirugía GAS73 en franja 5 en sala 6
+Cirugía GAS73 en franja 6 en sala 6
+Cirugía GAS73 en franja 7 en sala 6
+Cirugía GAS73 en franja 8 en sala 6

@@ -8,20 +8,21 @@ file_name = 'data/Salas de cirugía.xlsx'
 # Conjuntos
 # -----------------
 # Variable de las cirugías
+
+file_name = 'data/Salas de cirugía.xlsx'
 cirugias = pd.read_excel(file_name, sheet_name='Tabla 1')
 doctores = pd.read_excel(file_name, sheet_name='Tabla 2')
-#get the columns names
-columns = doctores.columns
-#print(columns)
 
-# Cirugías
-C = [i for i in cirugias['ID de la cirugía'] if not pd.isna(i)]
+columns = doctores.columns
 
 # Franjas horarias
 F = [t for t in range(1, 17)]
 
 # Salas de cirugía
 S = [i for i in range(1, 8)]
+
+# Cirugías
+C = [i for i in cirugias['ID de la cirugía'] if not pd.isna(i)]
 
 # Doctores 
 D = [i for i in doctores['ID del doctor'] if not pd.isna(i)]
@@ -60,6 +61,8 @@ x= {(i,j,k): lp.LpVariable(f"x_{i}_{j}_{k}", 0, None, lp.LpBinary) for i in C fo
 y= {(i,j,k): lp.LpVariable(f"y_{i}_{j}_{k}", 0, None, lp.LpBinary) for i in C for j in F for k in S}
 
 z = lp.LpVariable("z", 0, None, lp.LpContinuous)
+
+T = lp.LpVariable("t", 0, None, lp.LpContinuous)
 
 # -----------------------------
 # Restricciones
@@ -111,6 +114,16 @@ m+= z >= lp.lpSum(x[i,j,k]*(j+d[i]-1) for j in F for k in S for i in C)
 for j in F:
         for doctor in D:
             m += lp.lpSum(y[i,j,k] for i in C for k in S if n[i] == doctor) <= 1
+            
+
+
+# T es el tiempo libre de cada sala 
+for k in S:
+    m += T >= 17 - lp.lpSum(x[i,j,k]*d[i] for i in C for j in F)
+    
+#En cada franja debe haber una sala libre 
+for j in F: 
+    m += lp.lpSum(x[i,j,k] for i in C for k in S) <= 7
 
 
 
@@ -122,7 +135,7 @@ for j in F:
 # Función objetivo
 # -----------------------------
 
-m += z
+m += z + T
 
 # Optimizar modelo
 # -----------------------------
